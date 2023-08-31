@@ -17,6 +17,8 @@ router.post('/', function(req,res){
   })
 });
 
+module.exports = router;
+
 router.post('/random', function(req, res){
   res.render('index', {
     color: generateRandomHexCode(),
@@ -26,10 +28,9 @@ router.post('/random', function(req, res){
 
 function generateRandomHexCode() {
   let hexCode = "#"
-  while(hexCode.length < 7){
+  while (hexCode.length < 7) {
     hexCode += (Math.round(Math.random() * 15)).toString(16)
   }
   return hexCode
 }
 
-module.exports = router;
